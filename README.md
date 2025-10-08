@@ -1,60 +1,60 @@
 # Video Cleaner 🎥🧹
 
-Um utilitário profissional em **Python** para limpeza e organização automática de coleções de vídeos.
-O script detecta vídeos corrompidos, duplicados ou incompletos e os move para subpastas dedicadas, mantendo sua pasta de origem organizada.
+A professional **Python** utility for automatic cleaning and organization of video collections.
+The script detects **corrupted**, **duplicate**, and **incomplete** videos, moving them into dedicated subfolders to keep your source directory clean and organized.
 
 ---
 
-## 🧩 Descrição
+## 🧩 Description
 
-**Video Cleaner** foi desenvolvido para simplificar a manutenção de grandes bibliotecas de vídeos.
-Ele utiliza o `ffprobe` (parte do pacote **FFmpeg**) para verificar a integridade e duração dos arquivos, e faz o gerenciamento automatizado das pastas com base no tipo de problema encontrado.
+**Video Cleaner** was designed to simplify the maintenance of large video libraries.
+It uses `ffprobe` (part of the **FFmpeg** package) to check file integrity and duration, and automatically manages subfolders based on the type of detected issue.
 
-Além disso, acompanha um script de instalação (`setup.sh`) que cria o ambiente Python isolado, instala as dependências necessárias e executa o programa automaticamente.
-
----
-
-## ⚙️ Funcionalidades principais
-
-| Função                            | Descrição                                                                                        |
-| --------------------------------- | ------------------------------------------------------------------------------------------------ |
-| **Mover vídeos corrompidos**      | Detecta arquivos que não podem ser abertos pelo `ffprobe` e os move para a pasta `Corrupted`.    |
-| **Mover vídeos duplicados**       | Compara o hash SHA1 de cada arquivo e move cópias duplicadas para a pasta `Duplicates`.          |
-| **Mover vídeos incompletos**      | Verifica vídeos com duração muito curta (ex: < 5 segundos) e os move para a pasta `Incomplete`.  |
-| **Interface de seleção de pasta** | Usa `tkinter` para abrir um explorador gráfico e permitir ao usuário escolher a pasta de origem. |
-| **Organização automática**        | Cria as subpastas necessárias (`Corrupted`, `Incomplete`, `Duplicates`) automaticamente.         |
+The project also includes a setup script (`setup.sh`) that automatically creates a Python virtual environment, installs all dependencies, and runs the program.
 
 ---
 
-## 🧰 Requisitos
+## ⚙️ Main Features
+
+| Function                    | Description                                                                                            |
+| --------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Move corrupted videos**   | Detects files that cannot be opened by `ffprobe` and moves them to the `Corrupted` folder.             |
+| **Move duplicate videos**   | Compares SHA1 hashes of files and moves duplicates to the `Duplicates` folder.                         |
+| **Move incomplete videos**  | Detects videos with very short duration (e.g., < 5 seconds) and moves them to the `Incomplete` folder. |
+| **Folder selection dialog** | Uses `tkinter` to open a graphical file explorer for choosing the source folder.                       |
+| **Automatic organization**  | Automatically creates the required subfolders (`Corrupted`, `Incomplete`, `Duplicates`).               |
+
+---
+
+## 🧰 Requirements
 
 * **Python 3.8+**
-* **FFmpeg** (instalado automaticamente via `setup.sh`)
-* Módulos padrão: `os`, `shutil`, `subprocess`, `hashlib`, `tkinter`
+* **FFmpeg** (installed automatically by `setup.sh`)
+* Standard Python modules: `os`, `shutil`, `subprocess`, `hashlib`, `tkinter`
 
 ---
 
-## 🚀 Instalação e uso automático
+## 🚀 Automatic Setup and Execution
 
-O projeto vem com um script `setup.sh` que faz todo o processo de configuração automaticamente:
+This project includes a `setup.sh` script that handles everything for you:
 
 ```bash
 chmod +x setup.sh
 ./setup.sh
 ```
 
-Esse comando irá:
+This command will:
 
-1. Criar e ativar um ambiente virtual Python (`venv`)
-2. Verificar e instalar o `FFmpeg`, caso necessário
-3. Instalar as dependências do `requirements.txt`
-4. Executar o programa principal (`main.py`)
+1. Create and activate a Python virtual environment (`venv`)
+2. Verify and install `FFmpeg` if missing
+3. Install dependencies from `requirements.txt`
+4. Launch the main program (`main.py`)
 
 ---
 
-## 🖥️ Execução manual (opcional)
+## 🖥️ Manual Execution (Optional)
 
-Se preferir rodar manualmente:
+If you prefer manual setup:
 
 ```bash
 python3 -m venv venv
@@ -65,32 +65,32 @@ python main.py
 
 ---
 
-## 🧭 Menu principal
+## 🧭 Main Menu
 
-Ao executar o programa, será exibido um menu no terminal:
+When running the program, a simple text-based menu appears:
 
 ```
 ==== Video Cleaner ====
-1 - Mover vídeos corrompidos
-2 - Mover vídeos duplicados
-3 - Mover vídeos incompletos
+1 - Move corrupted videos
+2 - Move duplicate videos
+3 - Move incomplete videos
 ```
 
-Após escolher a opção, basta selecionar a pasta desejada na janela gráfica que será aberta.
+After choosing an option, a graphical window will open for you to select the source folder.
 
 ---
 
-## 📂 Estrutura de pastas
+## 📂 Project Structure
 
 ```
-📁 projeto/
+📁 project/
 ├── main.py
 ├── requirements.txt
 ├── setup.sh
 └── README.md
 ```
 
-Durante a execução, o programa criará automaticamente as pastas:
+During execution, the script automatically creates these folders:
 
 ```
 Corrupted/
@@ -100,13 +100,12 @@ Duplicates/
 
 ---
 
-## 🧑‍💻 Autor
+## 🧑‍💻 Author
 
-Desenvolvido por **Vinícius**, técnico e programador especializado em automação e sistemas de análise de arquivos.
+Developed by **Vinícius**, a technician and programmer specialized in automation and file analysis systems.
 
 ---
 
-## 🪪 Licença
+## 🪪 License
 
-Este projeto é de uso livre para fins pessoais e educacionais.
-
+This project is free for personal and educational use.
