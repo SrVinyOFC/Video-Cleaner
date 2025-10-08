@@ -1,0 +1,1 @@
+# Nenhuma dependência extra além do Python 3.8+ e Tkinter
